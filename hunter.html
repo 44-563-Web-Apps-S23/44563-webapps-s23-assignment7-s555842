@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Challenging Person</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+  integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+<style>
+    h1{
+        color: black;
+        
+    }
+    p {
+        color: red;
+    }
+    #bushes {
+        color: rgb(219, 166, 69);
+    }
+    #penalty{
+        color: rgb(230, 30, 207);
+    }
+    #help{
+        color: rgb(72, 107, 20);
+    }
+</style>
+</head>
+<body>
+
+
+  <h1>Find the mouse by Satya Deepu Mandapati</h1>
+  <p>Click on the bushes to search for the mouse, beware the cat</p>
+  <p id="bushes">Number of bushes checked is zero.</p>
+  <p id="penalty">Penalty is zero.</p>
+  <p onclick="help()">Click for help. </p>
+  <p id="help">Help report.</p>
+  <p><button onclick="bonusfunction()">Bonus</button></p>
+  <div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(0)" width="100" height="100" id="id0"></div>
+        <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(1)" width="100" height="100" id="id1"></div>
+        <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(2)" width="100" height="100" id="id2"></div>
+        <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(3)" width="100" height="100" id="id3"></div>
+        <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(4)" width="100" height="100" id="id4"></div>
+        <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(5)" width="100" height="100" id="id5"></div>
+    </div>
+</div>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(6)" width="100" height="100" id="id6"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(7)" width="100" height="100" id="id7"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(8)" width="100" height="100" id="id8"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(9)" width="100" height="100" id="id9"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(10)" width="100" height="100" id="id10"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(11)" width="100" height="100" id="id11"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(12)" width="100" height="100" id="id12"> </div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(13)" width="100" height="100" id="id13"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(14)" width="100" height="100" id="id14"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(15)" width="100" height="100" id="id15"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(16)" width="100" height="100" id="id16"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(17)" width="100" height="100" id="id17"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(18)" width="100" height="100" id="id18"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(19)" width="100" height="100" id="id19"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(20)" width="100" height="100" id="id20"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(21)" width="100" height="100" id="id21"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(22)" width="100" height="100" id="id22"></div>
+            <div class="col-sm-2" ><img src="smallbush.jpg" onclick="check(23)" width="100" height="100" id="id23"></div>
+        </div>
+    </div>
+
+    <script>
+        let id='id';
+        let checkCount=0;
+        let p=0;
+        let lastCheck=0;
+        let mouseLocation=13;
+        let catLocation=21;
+        let gameOver=false;
+        let ids=[ ];
+        for(let i=0;i<=23;i++){
+            ids[i]=id+i;
+       
+          
+        }
+        function check(position){
+            if(gameOver==true){
+
+            }
+            else{
+                if(position==mouseLocation){
+                    id=ids[position]
+                    document.getElementById(id).src="mouse1.jpg";
+                    gameOver=true;
+                    p=p-3;
+                    console.log("image is mouse "+position);
+                    console.log("penalty is "+p);
+                    console.log("GameOver");
+                }
+                else if(position==catLocation){
+                    id=ids[position]
+                    document.getElementById(id).src="tiger1.jpg";
+                    gameOver=true;
+                    p+=4;
+                    console.log("image is cat "+position);
+                    console.log("penalty is "+p);
+                    console.log("GameOver");
+                }
+                else {
+                    id=ids[position]
+                    document.getElementById(id).src="grass1.jpg";
+                    checkCount+=1;
+                    p+=1;
+                    console.log("checkcount is "+checkCount);
+                    console.log("penalty is " +p);
+                }
+                lastCheck=position;
+                console.log("lastCheck position is "+lastCheck);            
+            }          
+            bushes.innerHTML="Number of bushes checked is "+checkCount;
+            penalty.innerHTML="Penalty is "+p;            
+        }
+        function help()
+        {
+            console.log("hi")
+            let lastcol=lastCheck%6;
+            let lastrow=Math.floor(lastCheck/6);
+            let catcol=catLocation%6;
+            let catrow=Math.floor(catLocation/6);
+            let coldiff=Math.abs(lastcol-catcol);
+            let rowdiff=(Math.abs(lastrow-catrow));
+            let ratcol=mouseLocation%6;
+            let ratrow=Math.floor(mouseLocation/6);
+            let ratcoldiff=Math.abs(lastcol-ratcol);
+            let ratrowdiff=(Math.abs(lastrow-ratrow));
+            console.log(rowdiff,coldiff)
+            if(ratrowdiff<=1 && ratcoldiff<=1)
+            {
+                document.getElementById("help").innerHTML="squeek"
+                p+=2;
+                penalty.innerHTML="Penalty is "+p;
+            }
+            else if(rowdiff<=1 && coldiff<=1)
+            {
+                document.getElementById("help").innerHTML="Meow"
+                p+=2;
+                penalty.innerHTML="Penalty is "+p;
+            }
+            else{
+                document.getElementById("help").innerHTML="sorry, no help available"
+                p+=2;
+                penalty.innerHTML="Penalty is "+p;
+            }
+        }
+        let rand1,rand2,rand3;
+        function bonusfunction(){
+            rand1=Math.floor(Math.random()*24);
+            console.log(rand1);
+            rand2=Math.floor(Math.random()*24);
+            console.log(rand2);
+            rand3=Math.floor(Math.random()*24);
+            console.log(rand3);
+            lastCheck=rand3;
+            catLocation=rand1;
+            mouseLocation=rand2;
+            bonus=0;
+            p=0;
+            let lastcol=lastCheck%6;
+            let lastrow=Math.floor(lastCheck/6);
+            let catcol=catLocation%6;
+            let catrow=Math.floor(catLocation/6);
+            let coldiff=Math.abs(lastcol-catcol);
+            let rowdiff=(Math.abs(lastrow-catrow));
+            let ratcol=mouseLocation%6;
+            let ratrow=Math.floor(mouseLocation/6);
+            let ratcoldiff=Math.abs(lastcol-ratcol);
+            let ratrowdiff=(Math.abs(lastrow-ratrow));
+            console.log(rowdiff,coldiff)
+            if(ratrowdiff<=1 && ratcoldiff<=1)
+            {
+                document.getElementById("help").innerHTML="squeek"
+                p+=2;
+                penalty.innerHTML="Penalty is "+p;
+            }
+            else if(rowdiff<=1 && coldiff<=1)
+            {
+                document.getElementById("help").innerHTML="Meow"
+                p+=2;
+                penalty.innerHTML="Penalty is "+p;
+            }
+            else{
+                document.getElementById("help").innerHTML="sorry, no help available"
+                penal+=2;
+                penalty.innerHTML="Penalty is "+penal;
+            }
+        }
+            penalty.innerHTML="Penalty is "+penal;
+
+    </script>
+</body>
+</html>
